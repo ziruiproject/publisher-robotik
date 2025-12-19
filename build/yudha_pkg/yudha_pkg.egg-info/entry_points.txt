@@ -1,0 +1,4 @@
+[console_scripts]
+publisher_yudha = yudha_pkg.publisher:main
+subscriber_yudha = yudha_pkg.subscriber:main
+

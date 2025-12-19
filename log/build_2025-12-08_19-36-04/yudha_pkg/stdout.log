@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/yudha_pkg/yudha_pkg.egg-info
+writing ../../build/yudha_pkg/yudha_pkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/yudha_pkg/yudha_pkg.egg-info/dependency_links.txt
+writing entry points to ../../build/yudha_pkg/yudha_pkg.egg-info/entry_points.txt
+writing requirements to ../../build/yudha_pkg/yudha_pkg.egg-info/requires.txt
+writing top-level names to ../../build/yudha_pkg/yudha_pkg.egg-info/top_level.txt
+writing manifest file '../../build/yudha_pkg/yudha_pkg.egg-info/SOURCES.txt'
+reading manifest file '../../build/yudha_pkg/yudha_pkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/yudha_pkg/yudha_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/build
+creating /var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/build/lib
+creating /var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/build/lib/yudha_pkg
+copying yudha_pkg/__init__.py -> /var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/build/lib/yudha_pkg
+copying yudha_pkg/package.py -> /var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/build/lib/yudha_pkg
+running install
+running install_lib
+creating /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg
+copying /var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/build/lib/yudha_pkg/__init__.py -> /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg
+copying /var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/build/lib/yudha_pkg/package.py -> /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg
+byte-compiling /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg/__init__.py to __init__.cpython-310.pyc
+byte-compiling /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg/package.py to package.cpython-310.pyc
+running install_data
+creating /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/share/ament_index
+creating /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/share/ament_index/resource_index
+creating /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/share/ament_index/resource_index/packages
+copying resource/yudha_pkg -> /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/share/yudha_pkg
+running install_egg_info
+Copying ../../build/yudha_pkg/yudha_pkg.egg-info to /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing publisher_yudha script to /var/home/bluefin/Developments/ROBOTIK/ros2_ws/install/yudha_pkg/lib/yudha_pkg
+writing list of installed files to '/var/home/bluefin/Developments/ROBOTIK/ros2_ws/build/yudha_pkg/install.log'
