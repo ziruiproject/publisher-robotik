@@ -1,0 +1,43 @@
+[1.312s] Invoking command in '/home/rosdev/ros2_ws/src/src/yudha_pkg': PYTHONPATH=/home/rosdev/ros2_ws/src/build/yudha_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yudha_pkg build --build-base /home/rosdev/ros2_ws/src/build/yudha_pkg/build install --record /home/rosdev/ros2_ws/src/build/yudha_pkg/install.log --single-version-externally-managed install_data
+[1.749s] running egg_info
+[1.750s] creating ../../build/yudha_pkg/yudha_pkg.egg-info
+[1.751s] writing ../../build/yudha_pkg/yudha_pkg.egg-info/PKG-INFO
+[1.751s] writing dependency_links to ../../build/yudha_pkg/yudha_pkg.egg-info/dependency_links.txt
+[1.752s] writing entry points to ../../build/yudha_pkg/yudha_pkg.egg-info/entry_points.txt
+[1.752s] writing requirements to ../../build/yudha_pkg/yudha_pkg.egg-info/requires.txt
+[1.752s] writing top-level names to ../../build/yudha_pkg/yudha_pkg.egg-info/top_level.txt
+[1.752s] writing manifest file '../../build/yudha_pkg/yudha_pkg.egg-info/SOURCES.txt'
+[1.755s] reading manifest file '../../build/yudha_pkg/yudha_pkg.egg-info/SOURCES.txt'
+[1.756s] writing manifest file '../../build/yudha_pkg/yudha_pkg.egg-info/SOURCES.txt'
+[1.757s] running build
+[1.757s] running build_py
+[1.757s] creating /home/rosdev/ros2_ws/src/build/yudha_pkg/build
+[1.758s] creating /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib
+[1.758s] creating /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib/yudha_pkg
+[1.758s] copying yudha_pkg/__init__.py -> /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib/yudha_pkg
+[1.758s] copying yudha_pkg/publisher.py -> /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib/yudha_pkg
+[1.759s] copying yudha_pkg/subscriber.py -> /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib/yudha_pkg
+[1.760s] running install
+[1.760s] running install_lib
+[1.762s] creating /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg
+[1.762s] copying /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib/yudha_pkg/__init__.py -> /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg
+[1.762s] copying /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib/yudha_pkg/publisher.py -> /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg
+[1.763s] copying /home/rosdev/ros2_ws/src/build/yudha_pkg/build/lib/yudha_pkg/subscriber.py -> /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg
+[1.763s] byte-compiling /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg/__init__.py to __init__.cpython-310.pyc
+[1.764s] byte-compiling /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg/publisher.py to publisher.cpython-310.pyc
+[1.767s] byte-compiling /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg/subscriber.py to subscriber.cpython-310.pyc
+[1.768s] running install_data
+[1.768s] creating /home/rosdev/ros2_ws/src/install/yudha_pkg/share
+[1.768s] creating /home/rosdev/ros2_ws/src/install/yudha_pkg/share/ament_index
+[1.769s] creating /home/rosdev/ros2_ws/src/install/yudha_pkg/share/ament_index/resource_index
+[1.769s] creating /home/rosdev/ros2_ws/src/install/yudha_pkg/share/ament_index/resource_index/packages
+[1.769s] copying resource/yudha_pkg -> /home/rosdev/ros2_ws/src/install/yudha_pkg/share/ament_index/resource_index/packages
+[1.769s] creating /home/rosdev/ros2_ws/src/install/yudha_pkg/share/yudha_pkg
+[1.770s] copying package.xml -> /home/rosdev/ros2_ws/src/install/yudha_pkg/share/yudha_pkg
+[1.770s] running install_egg_info
+[1.772s] Copying ../../build/yudha_pkg/yudha_pkg.egg-info to /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages/yudha_pkg-0.0.0-py3.10.egg-info
+[1.774s] running install_scripts
+[1.816s] Installing publisher_yudha script to /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/yudha_pkg
+[1.817s] Installing subscriber_yudha script to /home/rosdev/ros2_ws/src/install/yudha_pkg/lib/yudha_pkg
+[1.817s] writing list of installed files to '/home/rosdev/ros2_ws/src/build/yudha_pkg/install.log'
+[1.869s] Invoked command in '/home/rosdev/ros2_ws/src/src/yudha_pkg' returned '0': PYTHONPATH=/home/rosdev/ros2_ws/src/build/yudha_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosdev/ros2_ws/src/install/yudha_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yudha_pkg build --build-base /home/rosdev/ros2_ws/src/build/yudha_pkg/build install --record /home/rosdev/ros2_ws/src/build/yudha_pkg/install.log --single-version-externally-managed install_data

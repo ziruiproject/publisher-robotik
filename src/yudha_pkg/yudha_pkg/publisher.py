@@ -10,10 +10,8 @@ class ImageDetectorNode(Node):
         
         self.publisher_ = self.create_publisher(String, "yudha_chatter", 10)
         
-        # Inisialisasi Kamera
         self.cap = cv2.VideoCapture(0)
         
-        # Setup Window dan Trackbar untuk Kalibrasi Manual
         cv2.namedWindow("HSV Calibration")
         cv2.createTrackbar("H Min", "HSV Calibration", 0, 179, self.nothing)
         cv2.createTrackbar("H Max", "HSV Calibration", 179, 179, self.nothing)
@@ -22,7 +20,6 @@ class ImageDetectorNode(Node):
         cv2.createTrackbar("V Min", "HSV Calibration", 100, 255, self.nothing)
         cv2.createTrackbar("V Max", "HSV Calibration", 255, 255, self.nothing)
 
-        # Timer untuk memproses frame (kira-kira 30 FPS)
         self.timer = self.create_timer(0.033, self.process_and_publish)
         
         self.get_logger().info("Node Detektor Multi-Warna ROS2 dimulai.")
@@ -53,7 +50,6 @@ class ImageDetectorNode(Node):
         frame = cv2.resize(frame, (640, 480))
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-        # Ambil nilai dari Trackbar
         h_min = cv2.getTrackbarPos("H Min", "HSV Calibration")
         h_max = cv2.getTrackbarPos("H Max", "HSV Calibration")
         s_min = cv2.getTrackbarPos("S Min", "HSV Calibration")
@@ -61,12 +57,10 @@ class ImageDetectorNode(Node):
         v_min = cv2.getTrackbarPos("V Min", "HSV Calibration")
         v_max = cv2.getTrackbarPos("V Max", "HSV Calibration")
 
-        # Mask Utama (Kalibrasi manual)
         lower = np.array([h_min, s_min, v_min])
         upper = np.array([h_max, s_max, v_max])
         mask = cv2.inRange(hsv, lower, upper)
         
-        # Pembersihan Noise
         kernel = np.ones((5, 5), np.uint8)
         mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
@@ -83,21 +77,16 @@ class ImageDetectorNode(Node):
                 x, y, w, h = cv2.boundingRect(largest)
                 roi_hsv = hsv[y:y+h, x:x+w]
 
-                # --- LOGIKA MULTI-MASK UNTUK LABEL WARNA ---
-                # 1. Mask Merah (Gabungan 2 ujung spektrum)
                 r_range1, r_range2 = self.get_hsv_range("red")
                 m_red = cv2.bitwise_or(cv2.inRange(roi_hsv, r_range1[0], r_range1[1]),
                                       cv2.inRange(roi_hsv, r_range2[0], r_range2[1]))
                 
-                # 2. Mask Hijau
                 g_range = self.get_hsv_range("green")
                 m_green = cv2.inRange(roi_hsv, g_range[0], g_range[1])
                 
-                # 3. Mask Biru
                 b_range = self.get_hsv_range("blue")
                 m_blue = cv2.inRange(roi_hsv, b_range[0], b_range[1])
 
-                # Hitung kepadatan piksel di ROI
                 counts = {
                     "RED": cv2.countNonZero(m_red),
                     "GREEN": cv2.countNonZero(m_green),
@@ -107,7 +96,6 @@ class ImageDetectorNode(Node):
                 color_label = max(counts, key=counts.get)
                 if counts[color_label] == 0: color_label = "Unknown"
 
-                # --- DETEKSI BENTUK ---
                 peri = cv2.arcLength(largest, True)
                 approx = cv2.approxPolyDP(largest, 0.02 * peri, True)
 
@@ -122,7 +110,6 @@ class ImageDetectorNode(Node):
 
                 final_info = f"{color_label} {shape}"
 
-                # Visualisasi di Window
                 cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
                 cv2.putText(frame, final_info, (x, y - 10),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
@@ -131,7 +118,6 @@ class ImageDetectorNode(Node):
         cv2.imshow("Mask", mask)
         cv2.waitKey(1)
 
-        # Publikasi Pesan ke Topic ROS2
         msg = String()
         msg.data = f"Terdeteksi: {final_info}"
         self.publisher_.publish(msg)
